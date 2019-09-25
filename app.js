@@ -9,13 +9,15 @@ require('dotenv').config()
 const authenticate = require('./middleware/authMiddleware')
 // app.all('/b/*', authenticate)
 
-const models = require('./models')
 
 const userRouter = require('./routes/user')
 app.use('/u', userRouter)
 
 const babyRouter = require('./routes/babies')
 app.use('/b', babyRouter)
+
+const weightRouter = require('./routes/weightRoute')
+app.use('/b/weight', weightRouter)
 
 //STRING, TEXT, ENUM, INTEGER, BOOLEAN, FLOAT
 

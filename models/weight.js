@@ -2,6 +2,7 @@
 module.exports = (sequelize, DataTypes) => {
   const Weight = sequelize.define('Weight', {
     babyId: DataTypes.INTEGER,
+    weight: DataTypes.FLOAT,
     date: DataTypes.DATE,
     deltaDay: DataTypes.FLOAT,
     deltaBirthWeight: DataTypes.FLOAT,

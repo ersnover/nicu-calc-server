@@ -3,7 +3,8 @@ const models = require('../models')
 
 const authenticate = (req,res,next) => {
     console.log('middleware called...')
-    let headers = req.headers['Authorization']
+    let headers = req.headers['authorization']
+    console.log(headers)
 
     if (headers) {
         const token = headers.split(' ')[1]

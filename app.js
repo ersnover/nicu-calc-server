@@ -7,7 +7,7 @@ app.use(cors())
 require('dotenv').config()
 
 const authenticate = require('./middleware/authMiddleware')
-// app.all('/b/*', authenticate)
+app.all('/b/*', authenticate)
 
 
 const userRouter = require('./routes/user')

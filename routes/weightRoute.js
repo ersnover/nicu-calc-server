@@ -30,8 +30,7 @@ router.post('/', (req,res) => {
         deltaBirthWeight: deltaBirthWeight,
         avg7day: avg7day
     })
-    .then(weight => {
-        res.json({weight: weight})
+    .then(weight => { weight ? res.json({weight: weight}) : res.json({error: "Unable to post weight"})
     })
 })
 
@@ -57,7 +56,7 @@ router.patch('/', (req,res) => {
 router.delete('/', (req,res) => {
     let weightId = req.body.weightId
 
-    models.Baby.destroy({where: {id: babyId}})
+    models.Weight.destroy({where: {id: weightId}})
     .then(result => {
         if (result === 1) {
             res.json({success: true})

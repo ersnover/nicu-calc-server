@@ -3,22 +3,26 @@
 module.exports = {
   up: (queryInterface, Sequelize) => {
     return queryInterface.changeColumn(
-      'Weights',
-      'weight',
-      {
-        type: Sequelize.FLOAT,
-        allowNull: false
-      }
-    )
+        'Weights',
+        'babyId',
+        {
+          type: Sequelize.INTEGER,
+          allowNull: false,
+          references: {
+            model: 'Babies',
+            key: 'id'
+          }
+        }
+      )
   },
 
   down: (queryInterface, Sequelize) => {
     return queryInterface.changeColumn(
       'Weights',
-      'weight',
+      'babyId',
       {
         type: Sequelize.INTEGER,
-        allowNull: true
+        allowNull: false
       }
     )
   }

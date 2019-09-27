@@ -20,7 +20,7 @@ const weightRouter = require('./routes/weightRoute')
 app.use('/b/weight', weightRouter)
 
 //STRING, TEXT, ENUM, INTEGER, BOOLEAN, FLOAT
-
-app.listen(process.env.PORT, () => {
+const PORT = 3001 || process.env.PORT
+app.listen(PORT, () => {
     console.log('server running.....')
 })
